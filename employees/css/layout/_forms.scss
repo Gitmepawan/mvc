@@ -1,0 +1,25 @@
+#searchBar {
+	padding: 20px 0 0;
+
+	input [type="text"], input [type="submit"] {
+		display: block;
+	}
+
+	#str {
+		width: 100%;
+		padding: 5px 10px;
+		border-radius: 5px;
+		border: 1px solid $darkGrey;
+		background: $lightGrey;
+		color: $white;
+		font-size: .9em;
+
+		&::placeholder {
+			color: $white;
+		}
+	}
+
+	#submit {
+		@include hide;
+	}
+}

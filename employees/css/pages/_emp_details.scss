@@ -1,0 +1,30 @@
+#empImage {
+	display: block;
+	margin: 0 auto 15px;
+
+	@media #{$tabletUp} {
+		margin: 0;
+		padding-right: 15px;
+	}
+}
+
+#empDetails {
+
+	@media #{$tabletUp} {
+		text-align: left;
+	}
+
+	.label {
+		font-weight: 700;
+	}
+
+	.centerDetails {
+		display: table;
+		margin: 0 auto;
+
+		@media #{$tabletUp} {
+			display: initial;
+			margin: o;
+		}
+	}
+}

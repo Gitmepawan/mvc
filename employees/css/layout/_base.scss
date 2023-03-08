@@ -1,0 +1,65 @@
+html,body {
+	font-family: $baseFont;
+	color: $darkGrey;
+	font-size: 100%;
+	background: $white;
+	letter-spacing: .15em;
+
+	@media #{$tabletOnly} {
+		//font-size: 97%;
+	}
+
+	@media #{$mobileOnly} {
+		//font-size: 93%;
+	}
+
+}
+
+.hidden {
+	@include hide;
+}
+
+a {
+	text-decoration: none;
+	color: $darkBlue;
+
+	&:visited {
+		@extend a;
+	}
+
+	&:hover {
+		color: $lightBlue;
+	}
+}
+
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin: 15px 0 25px; //trbl
+	text-align: center;
+
+	@media #{$tabletUp} {
+		font-size: 3em;
+	}
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+#content {
+	padding: 25px 0;
+}
+
+.bot-spacing {
+	margin-bottom: 15px;
+}

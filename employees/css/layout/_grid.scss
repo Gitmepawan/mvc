@@ -1,0 +1,63 @@
+//set column width to include content, padding, and border (does not include margin)
+*, *:after, *:before {
+	margin: 0;
+	padding: 0;
+
+	@include border-box;
+}
+
+//set images to resize based on coumn width
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto !important; 
+}
+
+//wrapper for coumns, resets column floats at the end of row
+.row {
+	position: relative;
+    width: 95%;
+    margin: 0 auto;
+    max-width: $grid-max-width;
+    @extend %clearfix;
+
+    @media #{$desktopUp} {
+		width: 100%;
+	}
+}
+
+//responsive columns for 3 media queries
+[class*='col-'], [class*='med-col-'], [class*='large-col-'] {
+	float: left;
+	padding: 0;
+	width: 100%;
+	min-height: 1px;
+}
+
+//collapse padding in columns when applied to parent row
+.collapse  [class*='col-'], .collapse  [class*='med-col-'], .collapse  [class*='large-col-']{
+	padding: 0;
+}
+
+//outputs width of columns
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		width: 100% / $grid-columns * $i;
+	}
+}
+
+@media #{$tabletUp} {
+	@for $i from 1 through 12 {
+		.med-col-#{$i} {
+			width: 100% / $grid-columns * $i;
+		}
+	}
+}
+
+@media #{$desktopUp} {
+	@for $i from 1 through 12 {
+		.large-col-#{$i} {
+			width: 100% / $grid-columns * $i;
+		}
+	}
+}
